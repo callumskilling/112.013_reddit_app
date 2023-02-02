@@ -30,14 +30,14 @@ To learn more about CodeCademy, you can vist <a href="https://codecademy.com">Co
 
 ## Project Requirements
 
-- [ ] Build the application using React and Redux
-- [ ] Version control your application with Git and host the repository on GitHub
-- [ ] Use a project management tool (GitHub Projects, Trello, etc.) to plan your work
-- [ ] Write a README (using Markdown) that documents your project including:
-    - [ ] Wireframes
-    - [ ] Technologies used
-    - [ ] Features
-    - [ ] Future work
+- [x] Build the application using React and Redux
+- [x] Version control your application with Git and host the repository on GitHub
+- [x] Use a project management tool (GitHub Projects, Trello, etc.) to plan your work
+- [x] Write a README (using Markdown) that documents your project including:
+    - [x] Wireframes
+    - [x] Technologies used
+    - [x] Features
+    - [x] Future work
 - [ ] Write unit tests for your components using Jest and Enzyme
 - [ ] Write end-to-end tests for your application
 - [ ] Users can use the application on any device (desktop to mobile)
