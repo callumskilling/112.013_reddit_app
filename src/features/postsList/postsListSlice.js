@@ -18,6 +18,11 @@ export const postsListSlice = createSlice({
     hasError: false,
     currentSubreddit: "r/australia"
   },
+  reducers: {
+    updateCurrentSubreddit: (state, action) => {
+      state.currentSubreddit = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadAllPosts.pending, (state) => {

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --ff: 'Inter', sans-serif;
+
+    --fw-n: 400;
+    --fw-m: 600;
+    --fw-b: 800;
+
+    --clr-font-regular: white;
+    --clr-font-accent: rgba(61, 188, 170, 1);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #1D0F4A 0%, rgba(29, 15, 74, 0.9) 100%);
+    color: var(--clr-font-regular);
+    font-family: var(--ff);
+}
+
+.nav-bar, .main-content {
+    display: flex
+}

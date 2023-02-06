@@ -6,10 +6,14 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Subreddits />
-      <PostsList />
+    <div className="app">
+      <div className="nav-bar">
+        <NavBar />  
+      </div>
+      <div className="main-content">
+        <Subreddits />
+        <PostsList />  
+      </div>
     </div>
   );
 }

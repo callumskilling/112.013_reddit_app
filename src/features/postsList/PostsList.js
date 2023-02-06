@@ -25,7 +25,6 @@ const Posts = () => {
     return (
         <>
             <section className='posts-container'>
-                <h2 className='section-title'>All Posts</h2>
                 {allPosts.map((post) => (
                         <Post key={post.id} post={post} />
                 ))}
