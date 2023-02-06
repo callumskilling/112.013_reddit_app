@@ -5,7 +5,7 @@ import {
     selectAllPosts,
     isLoading,
 } from './postsListSlice';
-import Post from '../../components/post/Post';
+import Post from '../../components/Post/Post';
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -25,9 +25,7 @@ const Posts = () => {
             <section className='posts-container'>
                 <h2 className='section-title'>All Posts</h2>
                 {allPosts.map((post) => (
-                    <div key={post.id}>
                         <Post post={post} />
-                    </div>
                 ))}
             </section>
         </>
