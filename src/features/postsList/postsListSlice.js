@@ -1,10 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-
 export const loadAllPosts = createAsyncThunk(
   'postsList/loadAllPosts',
-  async () => {
-    const response = await fetch("https://www.reddit.com/r/popular.json");
+  async (currentSubreddit) => {
+    const response = await fetch(`https://www.reddit.com/${currentSubreddit}.json`);
     const json = await response.json();
     const postData = json.data.children.map((post) => post.data);
     return postData;
@@ -16,7 +15,8 @@ export const postsListSlice = createSlice({
   initialState: {
     posts: [],
     isLoadingPostsList: false,
-    hasError: false
+    hasError: false,
+    currentSubreddit: "r/australia"
   },
   extraReducers: (builder) => {
     builder
@@ -37,6 +37,8 @@ export const postsListSlice = createSlice({
 });
 
 export const selectAllPosts = (state) => state.postsList.posts;
+
+export const selectCurrentSubreddit = (state) => state.postsList.currentSubreddit
 
 export const isLoading = (state) => state.postsList.isLoading;
 

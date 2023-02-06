@@ -4,6 +4,7 @@ import {
     loadAllPosts,
     selectAllPosts,
     isLoading,
+    selectCurrentSubreddit,
 } from './postsListSlice';
 import Post from '../../components/Post/Post';
 
@@ -11,10 +12,11 @@ const Posts = () => {
     const dispatch = useDispatch();
     const allPosts = useSelector(selectAllPosts);
     const isLoadingPosts = useSelector(isLoading);
+    const currentSubreddit = useSelector(selectCurrentSubreddit)
 
     useEffect(() => {
-        dispatch(loadAllPosts());
-    }, [dispatch]);
+        dispatch(loadAllPosts(currentSubreddit));
+    }, [dispatch, currentSubreddit]);
 
     if (isLoadingPosts) {
         return <div>Loading...</div>;
@@ -25,7 +27,7 @@ const Posts = () => {
             <section className='posts-container'>
                 <h2 className='section-title'>All Posts</h2>
                 {allPosts.map((post) => (
-                        <Post post={post} />
+                        <Post key={post.id} post={post} />
                 ))}
             </section>
         </>

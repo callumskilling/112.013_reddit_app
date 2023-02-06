@@ -2,7 +2,7 @@ import React from 'react';
 import { timeFromNow } from '../../utils/TimeFromNow';
 
 export default function Post({ post }) {
-    const unixTimestamp = post.created
+    const unixTimestamp = post.created;
     return (
         <div key={post.id} className='post-container'>
             <h3 className='post-title'>{post.title}</h3>
