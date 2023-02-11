@@ -15,3 +15,10 @@
 .subreddits_list > li {
     padding: 1rem;
 }
+
+.subreddits_list > li:hover {
+    cursor: pointer;
+    color: #3dbcaa;
+    font-weight: 800;
+    transition: color 0.25s ease-in-out;
+}

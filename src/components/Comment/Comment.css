@@ -1,0 +1,24 @@
+.comment-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #4c4271;
+}
+
+.comment-body {
+    width: 80%;
+}
+
+.comment-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 20%;
+}
+
+.comment-info > p {
+    font-size: 0.9rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { timeFromNow } from '../../utils/TimeFromNow';
+import CommentsList from '../../features/commentsList/CommentsList'
 import './Post.css'
 
 export default function Post({ post }) {
@@ -11,8 +12,9 @@ export default function Post({ post }) {
             <div className='post-info'>
                 <p className='author'>👤 {post.author}</p>
                 <p className='date_posted'>🗓️ {timeFromNow(unixTimestamp)}</p>
-                <p className='num_comments'>💬 {post.num_comments}</p>                
+                <p className='num_comments'>💬 {post.num_comments}</p>              
             </div>
+            <CommentsList />
         </div>
     );
 }
