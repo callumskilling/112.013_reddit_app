@@ -19,7 +19,7 @@ const Comments = () => {
     }, [dispatch, currentPost]);
 
     if (isLoadingComments) {
-        return <div>Loading...</div>;
+        return <div><p>Loading...</p></div>;
     }
 
     return (
