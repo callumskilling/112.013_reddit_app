@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     loadAllComments,
     selectAllComments,
-    isLoading,
+    isLoadingCommentsList,
     selectCurrentPost,
 } from './commentsListSlice';
 import Comment from '../../components/Comment/Comment';
@@ -11,7 +11,7 @@ import Comment from '../../components/Comment/Comment';
 const Comments = () => {
     const dispatch = useDispatch();
     const allComments = useSelector(selectAllComments);
-    const isLoadingComments = useSelector(isLoading);
+    const isLoadingComments = useSelector(isLoadingCommentsList);
     const currentPost = useSelector(selectCurrentPost);
 
     useEffect(() => {

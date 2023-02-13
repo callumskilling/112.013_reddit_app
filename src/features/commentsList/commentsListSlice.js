@@ -45,6 +45,6 @@ export const selectAllComments = (state) => state.commentsList.comments;
 
 export const selectCurrentPost = (state) => state.commentsList.currentPost
 
-export const isLoading = (state) => state.commentsList.isLoading;
+export const isLoadingCommentsList = (state) => state.commentsList.isLoadingCommentsList;
 
 export default commentsListSlice.reducer;
