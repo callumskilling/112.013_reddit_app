@@ -7,6 +7,7 @@ import {
     selectCurrentSubreddit,
 } from './postsListSlice';
 import Post from '../../components/Post/Post';
+import './PostsList.css'
 
 const Posts = () => {
     const dispatch = useDispatch();
