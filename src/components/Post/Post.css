@@ -16,3 +16,7 @@
     width: 100%;
     justify-content: space-between;
 }
+
+.post-image {
+    height: 20rem;
+}
