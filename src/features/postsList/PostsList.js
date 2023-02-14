@@ -8,7 +8,7 @@ import {
 } from './postsListSlice';
 import Post from '../../components/Post/Post';
 import './PostsList.css'
-import Skeleton from '../../components/Skeletons/PostSkeleton';
+import PostSkeleton from '../../components/Skeletons/PostSkeleton';
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -23,10 +23,10 @@ const Posts = () => {
     if (isLoadingPosts) {
         return (
             <section className='posts-container'>
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
+                <PostSkeleton />
+                <PostSkeleton />
+                <PostSkeleton />
+                <PostSkeleton />
             </section>
         )
     }
