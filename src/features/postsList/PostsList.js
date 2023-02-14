@@ -8,6 +8,7 @@ import {
 } from './postsListSlice';
 import Post from '../../components/Post/Post';
 import './PostsList.css'
+import Skeleton from '../../components/Skeletons/PostSkeleton';
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -20,14 +21,21 @@ const Posts = () => {
     }, [dispatch, currentSubreddit]);
 
     if (isLoadingPosts) {
-        return <div>Loading...</div>;
+        return (
+            <section className='posts-container'>
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+                <Skeleton />
+            </section>
+        )
     }
 
     return (
         <>
             <section className='posts-container'>
                 {allPosts.map((post) => (
-                        <Post key={post.id} post={post} />
+                    <Post key={post.id} post={post} />
                 ))}
             </section>
         </>

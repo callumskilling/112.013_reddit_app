@@ -7,6 +7,7 @@ import {
     selectCurrentPost,
 } from './commentsListSlice';
 import Comment from '../../components/Comment/Comment';
+import CommentSkeleton from '../../components/Skeletons/CommentSkeleton';
 
 const Comments = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,14 @@ const Comments = () => {
     }, [dispatch, currentPost]);
 
     if (isLoadingComments) {
-        return <div><p>Loading...</p></div>;
+        return (
+            <section className='comments-container'>
+                <CommentSkeleton />
+                <CommentSkeleton />
+                <CommentSkeleton />
+                <CommentSkeleton />
+            </section>
+        );
     }
 
     return (

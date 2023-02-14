@@ -45,6 +45,6 @@ export const selectAllPosts = (state) => state.postsList.posts;
 
 export const selectCurrentSubreddit = (state) => state.postsList.currentSubreddit
 
-export const isLoading = (state) => state.postsList.isLoading;
+export const isLoading = (state) => state.postsList.isLoadingPostsList;
 
 export default postsListSlice.reducer;
