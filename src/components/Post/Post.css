@@ -19,4 +19,7 @@
 
 .post-image {
     height: 20rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
 }
