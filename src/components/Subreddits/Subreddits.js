@@ -14,15 +14,30 @@ export default function Subreddits () {
         "r/askscience",
         "r/brandnewsentence",
         "r/renewableenergy",
-        "r/mademesmile"
+        "r/mademesmile",
+        "r/pokemon"
     ]
     const dispatch = useDispatch();
 
     const handleClick = (e) => {
+        const newSubreddit = e.target.getAttribute('value');
+
         dispatch({
             type: "postsList/updateCurrentSubreddit",
-            payload: e.target.getAttribute('value')
+            payload: newSubreddit
         })
+
+        
+
+        for (const subreddit in subreddits) {
+            if (newSubreddit !== subreddits[subreddit]) {
+                document.getElementById(subreddits[subreddit]).setAttribute("aria-current", "false")
+                document.getElementById(subreddits[subreddit]).innerHTML = `${subreddits[subreddit].toLowerCase()}`
+            } else {
+                document.getElementById(newSubreddit).setAttribute("aria-current", "true");
+                document.getElementById(newSubreddit).innerHTML = `${newSubreddit.toUpperCase()}`
+            }
+        }
     }
 
     
@@ -30,7 +45,7 @@ export default function Subreddits () {
         <div className="subreddits_container">
             <ul className="subreddits_list">
             {subreddits.map((subreddit) => (
-                    <li value={subreddit} onClick={handleClick}>{subreddit}</li>
+                    <li key={subreddit} id={subreddit} aria-current="false" value={subreddit} onClick={handleClick}>{subreddit}</li>
                 ))}
             </ul>
         </div>
