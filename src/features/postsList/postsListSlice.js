@@ -16,7 +16,7 @@ export const postsListSlice = createSlice({
     posts: [],
     isLoadingPostsList: false,
     hasError: false,
-    currentSubreddit: "r/australia"
+    currentSubreddit: "r/popular"
   },
   reducers: {
     updateCurrentSubreddit: (state, action) => {

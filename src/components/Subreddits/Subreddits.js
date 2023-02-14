@@ -27,8 +27,6 @@ export default function Subreddits () {
             payload: newSubreddit
         })
 
-        
-
         for (const subreddit in subreddits) {
             if (newSubreddit !== subreddits[subreddit]) {
                 document.getElementById(subreddits[subreddit]).setAttribute("aria-current", "false")
@@ -45,7 +43,7 @@ export default function Subreddits () {
         <div className="subreddits_container">
             <ul className="subreddits_list">
             {subreddits.map((subreddit) => (
-                    <li key={subreddit} id={subreddit} aria-current="false" value={subreddit} onClick={handleClick}>{subreddit}</li>
+                    <li key={subreddit} id={subreddit} aria-current={subreddit === "r/popular" ? "true" : "false"} value={subreddit} onClick={handleClick}>{subreddit === "r/popular" ? subreddit.toUpperCase() : subreddit.toLowerCase()}</li>
                 ))}
             </ul>
         </div>
