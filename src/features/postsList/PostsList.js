@@ -24,7 +24,6 @@ const Posts = () => {
 
     const renderFilteredPosts = (post) => {
         if (post.title.includes(currentSearchTerm)) {
-            console.log('currentSearchTerm includes post.title')
             return (<Post key={post.id} post={post} />)
         }
     }

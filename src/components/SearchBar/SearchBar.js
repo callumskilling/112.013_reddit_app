@@ -11,10 +11,14 @@ export default function SearchBar() {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
     return (
         <div className="searchbar-container">
-            <form>
-                <input type="text" onChange={handleChange}/>
+            <form onSubmit={handleSubmit}>
+                <input type="text" onChange={handleChange} />
             </form>
         </div>
     )
