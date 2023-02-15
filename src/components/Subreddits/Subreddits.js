@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import './Subreddits.css'
 
-export default function Subreddits () {
+export default function Subreddits() {
     const subreddits = [
         "r/popular",
         "r/futurology",
@@ -17,6 +17,7 @@ export default function Subreddits () {
         "r/mademesmile",
         "r/pokemon"
     ]
+    
     const dispatch = useDispatch();
 
     const handleClick = (e) => {
@@ -38,11 +39,11 @@ export default function Subreddits () {
         }
     }
 
-    
+
     return (
         <div className="subreddits_container">
             <ul className="subreddits_list">
-            {subreddits.map((subreddit) => (
+                {subreddits.map((subreddit) => (
                     <li
                         key={subreddit}
                         id={subreddit}

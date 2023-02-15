@@ -7,6 +7,11 @@
     background-color: #4c4271;
 }
 
+.comment-container:hover {
+    background-color: #393156;
+    transition: all 0.25s;
+}
+
 .comment-body {
     width: 80%;
 }

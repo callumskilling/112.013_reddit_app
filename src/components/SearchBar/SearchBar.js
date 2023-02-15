@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import "./SearchBar.css"
 
 export default function SearchBar() {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export default function SearchBar() {
     return (
         <div className="searchbar-container">
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={handleChange} />
+                <input type="text" onChange={handleChange} className="searchbar" />
             </form>
         </div>
     )
