@@ -18,11 +18,15 @@
 }
 
 .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
     background-color: #1e0f4b;
     color: var(--clr-font-regular);
     font-family: var(--ff);
+    min-height: 100vh;
 }
 
 .nav-bar, .main-content {

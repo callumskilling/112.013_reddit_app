@@ -43,7 +43,15 @@ export default function Subreddits () {
         <div className="subreddits_container">
             <ul className="subreddits_list">
             {subreddits.map((subreddit) => (
-                    <li key={subreddit} id={subreddit} aria-current={subreddit === "r/popular" ? "true" : "false"} value={subreddit} onClick={handleClick}>{subreddit === "r/popular" ? subreddit.toUpperCase() : subreddit.toLowerCase()}</li>
+                    <li
+                        key={subreddit}
+                        id={subreddit}
+                        aria-current={subreddit === "r/popular" ? "true" : "false"}
+                        value={subreddit}
+                        onClick={handleClick}
+                    >
+                        {subreddit === "r/popular" ? subreddit.toUpperCase() : subreddit.toLowerCase()}
+                    </li>
                 ))}
             </ul>
         </div>

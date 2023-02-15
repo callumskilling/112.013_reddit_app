@@ -16,11 +16,15 @@ export const postsListSlice = createSlice({
     posts: [],
     isLoadingPostsList: false,
     hasError: false,
-    currentSubreddit: "r/popular"
+    currentSubreddit: "r/popular",
+    currentSearchTerm: ""
   },
   reducers: {
     updateCurrentSubreddit: (state, action) => {
       state.currentSubreddit = action.payload
+    },
+    updateCurrentSearchTerm: (state, action) => {
+      state.currentSearchTerm = action.payload;
     }
   },
   extraReducers: (builder) => {
@@ -43,7 +47,9 @@ export const postsListSlice = createSlice({
 
 export const selectAllPosts = (state) => state.postsList.posts;
 
-export const selectCurrentSubreddit = (state) => state.postsList.currentSubreddit
+export const selectCurrentSubreddit = (state) => state.postsList.currentSubreddit;
+
+export const selectCurrentSearchTerm = (state) => state.postsList.currentSearchTerm;
 
 export const isLoading = (state) => state.postsList.isLoadingPostsList;
 

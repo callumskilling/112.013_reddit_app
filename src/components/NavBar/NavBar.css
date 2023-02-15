@@ -1,8 +1,13 @@
 nav {
     display: flex;
     width: 100vw;
-    height: 50px;
+    height: 80px;
     background-color: #34275c;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding-inline: 20px;
+}
+
+.logo {
+    height: 80%;
 }

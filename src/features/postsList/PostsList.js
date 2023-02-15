@@ -5,6 +5,7 @@ import {
     selectAllPosts,
     isLoading,
     selectCurrentSubreddit,
+    selectCurrentSearchTerm,
 } from './postsListSlice';
 import Post from '../../components/Post/Post';
 import './PostsList.css'
@@ -14,11 +15,19 @@ const Posts = () => {
     const dispatch = useDispatch();
     const allPosts = useSelector(selectAllPosts);
     const isLoadingPosts = useSelector(isLoading);
-    const currentSubreddit = useSelector(selectCurrentSubreddit)
+    const currentSubreddit = useSelector(selectCurrentSubreddit);
+    const currentSearchTerm = useSelector(selectCurrentSearchTerm);
 
     useEffect(() => {
         dispatch(loadAllPosts(currentSubreddit));
     }, [dispatch, currentSubreddit]);
+
+    const renderFilteredPosts = (post) => {
+        if (post.title.includes(currentSearchTerm)) {
+            console.log('currentSearchTerm includes post.title')
+            return (<Post key={post.id} post={post} />)
+        }
+    }
 
     if (isLoadingPosts) {
         return (
@@ -31,15 +40,28 @@ const Posts = () => {
         )
     }
 
-    return (
-        <>
-            <section className='posts-container'>
-                {allPosts.map((post) => (
-                    <Post key={post.id} post={post} />
-                ))}
-            </section>
-        </>
-    );
+    if (currentSearchTerm === '') {
+        return (
+            <>
+                <section className='posts-container'>
+                    {allPosts.map((post) => (
+                        <Post key={post.id} post={post} />
+                    ))}
+                </section>
+            </>
+        )
+
+    }
+
+    if (currentSearchTerm !== '') {
+        return (
+            <>
+                <section className='posts-container'>
+                    {allPosts.map(post => renderFilteredPosts(post))}
+                </section>
+            </>
+        )
+    }
 };
 
 export default Posts;
