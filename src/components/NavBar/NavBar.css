@@ -8,6 +8,11 @@ nav {
     padding-inline: 20px;
 }
 
+.logo-container {
+    display: flex;
+    align-items: flex-end;
+}
+
 .logo {
-    height: 80%;
+    height: 50px;
 }

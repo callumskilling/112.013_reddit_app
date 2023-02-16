@@ -28,6 +28,13 @@ export default function Subreddits() {
             payload: newSubreddit
         })
 
+        dispatch ({
+            type: "postsList/updateCurrentSearchTerm",
+            payload: ""
+        })
+
+        document.getElementById("searchbar").value = "";
+
         for (const subreddit in subreddits) {
             if (newSubreddit !== subreddits[subreddit]) {
                 document.getElementById(subreddits[subreddit]).setAttribute("aria-current", "false")

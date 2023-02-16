@@ -18,9 +18,6 @@
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     margin: 0;
     padding: 0;
     background-color: #1e0f4b;
@@ -30,5 +27,9 @@
 }
 
 .nav-bar, .main-content {
-    display: flex
+    display: flex;
+}
+
+.main-content {
+    min-height: 86.5vh;
 }
