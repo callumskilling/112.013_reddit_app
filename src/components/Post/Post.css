@@ -4,7 +4,6 @@
     background: rgba(41, 26, 85, 1.00);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    cursor: pointer;
 }
 
 .post-title {
@@ -22,4 +21,13 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
+}
+
+.num-comments {
+    cursor: pointer;
+    outline: none;
+    border:none;
+    background-image:none;
+    background-color: transparent;
+    color: white;
 }

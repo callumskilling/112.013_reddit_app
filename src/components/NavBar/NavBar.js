@@ -8,7 +8,7 @@ export default function NavBar () {
         <nav>
             <div className="logo-container">
                 <img className="logo" alt="reddit looking logo" src={logo} />
-                <h1>Reddit</h1>
+                <h1 className="app-title">Read It</h1>
             </div>
             <SearchBar />
         </nav>

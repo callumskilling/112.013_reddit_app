@@ -5,8 +5,6 @@ import './CommentSkeleton.css'
 
 export default function CommentSkeleton() {
     return (
-        <div className='comment-skeleton-container'>
             <div className='comment-skeleton-comment'></div>
-        </div>
     );
 }

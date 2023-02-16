@@ -1,4 +1,16 @@
+.searchbar-container {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+}
+
 .searchbar {
+    outline: none;
+    border:none;
+    background-image:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
     border-radius: 40px;
     padding: 10px;
 }

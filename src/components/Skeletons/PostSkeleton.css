@@ -26,7 +26,7 @@
 }
 
 .post-skeleton-title {
-    height: 20px;
+    height: 40px;
     width: 60%;
     background-color: white;
     border-radius: 20px;
@@ -38,18 +38,29 @@
     justify-content: space-between;
 }
 
-.post-skeleton-thumbnail {
+.post-skeleton-image {
     margin-top: 20px;
-    height: 100px;
-    width: 40%;
+    height: 200px;
+    width: 200px;
     background-color: white;
     border-radius: 20px;
 }
 
-.post-skeleton-small-text {
-    height: 15px;
-    width: 60px;
+.post-skeleton-info > div {
+    height: 20px;
     border-radius: 20px;
     background-color: white;
     margin-top: 20px;
+}
+
+.post-skeleton-short-text {
+    width: 40px
+}
+
+.post-skeleton-medium-text {
+    width: 80px;
+}
+
+.post-skeleton-long-text {
+    width: 120px;
 }

@@ -11,8 +11,14 @@ nav {
 .logo-container {
     display: flex;
     align-items: flex-end;
+    height: 50px;
 }
 
 .logo {
-    height: 50px;
+    height: 100%;
+}
+
+.app-title {
+    padding-inline: 1rem;
+    font-weight: 800;
 }
