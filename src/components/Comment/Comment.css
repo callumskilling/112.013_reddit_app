@@ -21,9 +21,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    width: 20%;
-}
-
-.comment-info > p {
+    width: 300px;
     font-size: 0.9rem;
 }
+
+@media only screen and (max-width: 1100px) {
+    .comment-container {
+        display: block;
+    }
+    .comment-info {
+        margin-top: 0.5rem;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 0.7rem;
+        width: 100%;
+    }
+  }
