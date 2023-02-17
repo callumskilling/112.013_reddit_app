@@ -40,16 +40,16 @@ To learn more about CodeCademy, you can vist <a href="https://codecademy.com">Co
     - [x] Future work
 - [ ] Write unit tests for your components using Jest and Enzyme
 - [ ] Write end-to-end tests for your application
-- [ ] Users can use the application on any device (desktop to mobile)
-- [ ] Users can use the application on any modern browser
-- [ ] Users can access your application at a URL
-- [ ] Users see an initial view of the data when first visiting the app
-- [ ] Users can search the data using terms
-- [ ] Users can filter the data based on categories that are predefined
+- [x] Users can use the application on any device (desktop to mobile)
+- [x] Users can use the application on any modern browser
+- [x] Users can access your application at a URL
+- [x] Users see an initial view of the data when first visiting the app
+- [x] Users can search the data using terms
+- [x] Users can filter the data based on categories that are predefined
 - [ ] Users are shown a detailed view (modal or new page/route) when they select an item
-- [ ] Users are delighted with a cohesive design system
-- [ ] Users are delighted with animations and transitions
-- [ ] Users are able to leave an error state
+- [x] Users are delighted with a cohesive design system
+- [x] Users are delighted with animations and transitions
+- [x] Users are able to leave an error state
 - [ ] Get 90+ scores on [https://pagespeed.web.dev](https://pagespeed.web.dev/)
     - [ ] We understand you cannot control how media assets like videos and images are sent to the client. It is okay to have a score below 90 for Performance if they are related to the media from Reddit.
 - [ ] OPTIONAL: [Get a custom domain name and use it for your application](https://www.codecademy.com/courses/make-a-website/lessons/setting-up-your-domain/)
