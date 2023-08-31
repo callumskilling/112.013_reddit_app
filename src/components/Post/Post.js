@@ -4,7 +4,9 @@ import CommentsList from "../../features/commentsList/CommentsList"
 import "./Post.css"
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentPost } from "../../features/commentsList/commentsListSlice";
-
+import { User } from "../../assets/icons/User";
+import { Calendar } from "../../assets/icons/Calendar";
+import { Speech } from "../../assets/icons/Speech";
 
 
 export default function Post(props) {
@@ -16,12 +18,12 @@ export default function Post(props) {
     const handleClick = () => {
         if (post.permalink !== currentPost) {
             dispatch({
-                type: "commentsList/updateCurrentPost", 
+                type: "commentsList/updateCurrentPost",
                 payload: `${post.permalink}`
             })
         } else {
             dispatch({
-                type: "commentsList/updateCurrentPost", 
+                type: "commentsList/updateCurrentPost",
                 payload: ""
             })
         }
@@ -35,14 +37,24 @@ export default function Post(props) {
     }
 
     return (
-        <article key={post.id} className="post-container">
+        <article key={post.id} className="post-container" onClick={handleClick}>
             <h2 className="post-title">{post.title}</h2>
-            <img src={post.url} alt="" className="post-image" />
-            <div className="post-info">
-                <p className="author">👤 {post.author}</p>
-                <p className="date-posted">🗓️ {timeFromNow(unixTimestamp)}</p>
-                <button className="num-comments" onClick={handleClick}>💬 {post.num_comments}</button>              
+            <div className="post-info-wrapper">
+                <div className="author-wrapper">
+                    <User className="post-info-icon" />
+                    <p className="author post-info-detail">{post.author}</p>
+                </div>
+                <div className="date-posted-wrapper">
+                    <Calendar className="post-info-icon" />
+                    <p className="date-posted post-info-detail">{timeFromNow(unixTimestamp)}</p>
+                </div>
+                <div className="num-comments-wrapper">
+                    <Speech className="post-info-icon" />
+                    <button className="num-comments post-info-detail" onClick={handleClick}>{post.num_comments.toLocaleString('en', { useGrouping: true })}
+                    </button>
+                </div>
             </div>
+            <img src={post.url} alt="" className="post-image" />
             {renderComments()}
         </article>
     );

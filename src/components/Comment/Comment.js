@@ -1,6 +1,9 @@
 import React from 'react';
 import { timeFromNow } from '../../utils/TimeFromNow';
 import './Comment.css'
+import { User } from "../../assets/icons/User";
+import { Calendar } from "../../assets/icons/Calendar";
+import { Up } from "../../assets/icons/Up";
 
 export default function Comment({ comment }) {
     const unixTimestamp = comment.created_utc;
@@ -8,9 +11,12 @@ export default function Comment({ comment }) {
         <div key={comment.id} className='comment-container'>
             <p className='comment-body'>{comment.body}</p>
             <div className='comment-info'>
-                <p className='author'>{comment.author} 👤</p>
-                <p className='date_posted'>{timeFromNow(unixTimestamp)} 🗓️</p>
-                <p className='score'>{comment.score} ⬆️</p>              
+                <div className="comment-info-wrapper"><p className='author'>{comment.author}</p><User className="post-info-icon" /></div>
+                <div className="comment-info-wrapper"><p className='date_posted'>{timeFromNow(unixTimestamp)}</p><Calendar className="post-info-icon" /></div>
+                <div className="comment-info-wrapper"><p className='score'>{Number(comment.score).toLocaleString('en', { useGrouping: true })}</p><Up className="post-info-icon" /></div>
+
+
+
             </div>
         </div>
     );

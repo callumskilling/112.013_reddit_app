@@ -9,7 +9,6 @@ export default function Subreddits() {
         "r/australia",
         "r/baking",
         "r/lgbt",
-        "r/natureisfuckinglit",
         "r/gifs",
         "r/askscience",
         "r/brandnewsentence",

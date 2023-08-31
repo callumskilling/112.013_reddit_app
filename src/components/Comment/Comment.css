@@ -4,16 +4,17 @@
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
-    background-color: #4c4271;
+    background-color: var(--clr-smoky-black);
 }
 
 .comment-container:hover {
-    background-color: #393156;
+    background-color: var(--clr-old-lavender);
     transition: all 0.25s;
 }
 
 .comment-body {
     width: 80%;
+    text-wrap: balance;
 }
 
 .comment-info {
@@ -21,8 +22,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    width: 300px;
     font-size: 0.9rem;
+}
+
+.comment-info-wrapper {
+    display: flex;
+    padding-block: 0.25rem;
 }
 
 @media only screen and (max-width: 1100px) {
