@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/112.013_reddit_app/static/css/main.9ab6f247.css",
-    "main.js": "/112.013_reddit_app/static/js/main.c58109bb.js",
+    "main.css": "/112.013_reddit_app/static/css/main.9d4f0911.css",
+    "main.js": "/112.013_reddit_app/static/js/main.9593a798.js",
     "static/media/inter-v12-latin-800.woff2": "/112.013_reddit_app/static/media/inter-v12-latin-800.7e1a31f93354d23987f4.woff2",
     "static/media/inter-v12-latin-600.woff2": "/112.013_reddit_app/static/media/inter-v12-latin-600.8f1e0300e8d26fa8919d.woff2",
     "static/media/inter-v12-latin-200.woff2": "/112.013_reddit_app/static/media/inter-v12-latin-200.7b1cdef5c4317d8dfe5a.woff2",
     "static/media/inter-v12-latin-regular.woff2": "/112.013_reddit_app/static/media/inter-v12-latin-regular.be7cb18dc7caf47cf7e9.woff2",
     "index.html": "/112.013_reddit_app/index.html",
-    "main.9ab6f247.css.map": "/112.013_reddit_app/static/css/main.9ab6f247.css.map",
-    "main.c58109bb.js.map": "/112.013_reddit_app/static/js/main.c58109bb.js.map"
+    "main.9d4f0911.css.map": "/112.013_reddit_app/static/css/main.9d4f0911.css.map",
+    "main.9593a798.js.map": "/112.013_reddit_app/static/js/main.9593a798.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ab6f247.css",
-    "static/js/main.c58109bb.js"
+    "static/css/main.9d4f0911.css",
+    "static/js/main.9593a798.js"
   ]
 }
