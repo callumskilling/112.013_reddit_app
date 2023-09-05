@@ -6,9 +6,9 @@ import { Reddit } from "../../assets/icons/Reddit";
 export default function NavBar () {
     return (
         <nav>
-            <div className="logo-container">
+            <div id="logo-container">
                 <Reddit height="100%" />
-                <h1 className="app-title">REDDIT MINIMAL</h1>
+                <h1 id="app-title">REDDIT<span id="app-subtitle">:MINIMAL</span></h1>
             </div>
             <SearchBar />
         </nav>

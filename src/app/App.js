@@ -7,18 +7,14 @@ import './App.css'
 
 function App() {
   return (
-    <div className="app">
-      <div className="nav-bar">
-        <NavBar />  
-      </div>
-      <div className="main-content">
+    <>
+      <NavBar />
+      <main>
         <Subreddits />
-        <PostsList />  
-      </div>
-      <div className="footer">
-        <Footer />
-      </div>
-    </div>
+        <PostsList />
+      </main>
+      <Footer />
+    </>
   );
 }
 

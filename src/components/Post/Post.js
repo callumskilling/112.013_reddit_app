@@ -54,7 +54,7 @@ export default function Post(props) {
                     </button>
                 </div>
             </div>
-            <img src={post.url} alt="" className="post-image" />
+            {post.url && <img src={post.url} alt="" className="post-image" />}
             {renderComments()}
         </article>
     );

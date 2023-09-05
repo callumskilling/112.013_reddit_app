@@ -1,9 +1,9 @@
 .post-container {
-    margin: 1rem;
+    margin-bottom: 1.5rem;
     padding: 1rem;
     background-color: var(--clr-chinese-black);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    border-radius: 0.5rem;
     cursor: pointer;
 }
 
@@ -14,13 +14,13 @@
 }
 
 .post-info-wrapper {
-    display: flex;
-    gap: 1rem;
+    padding-block: 1rem 0;
 }
 
-.author-wrapper, .date-posted-wrapper, .num-comments-wrapper {
+.author-wrapper,
+.date-posted-wrapper,
+.num-comments-wrapper {
     display: flex;
-    justify-content: center;
 }
 
 .post-info-icon {
@@ -46,13 +46,20 @@
 .num-comments {
     cursor: pointer;
     outline: none;
-    border:none;
-    background-image:none;
+    border: none;
+    background-image: none;
     background-color: transparent;
 }
 
-@media only screen and (max-width: 1100px) {
-    .post-info {
-        font-size: 0.8rem;
+@media only screen and (min-width: 768px) {
+    .post-info-wrapper {
+        display: flex;
+        gap: 1rem;
     }
-  }
+
+    .author-wrapper,
+    .date-posted-wrapper,
+    .num-comments-wrapper {
+        justify-content: center;
+    }
+}

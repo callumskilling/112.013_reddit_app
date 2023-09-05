@@ -1,24 +1,41 @@
 nav {
     display: flex;
-    width: 100vw;
-    height: 80px;
-    background-color: var(--clr-chinese-black);
+    box-sizing: border-box;
+    background-color: var(--clr-smoky-black);
     justify-content: space-between;
     align-items: center;
-    padding-inline: 20px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 3;
 }
 
-.logo-container {
+#logo-container {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     height: 2rem;
 }
 
-.logo {
-    height: 100%;
+#app-title {
+    padding-left: 0.25rem;
+    font-size: 1.1rem;
+    font-weight: 200;
 }
 
-.app-title {
-    padding-inline: 1rem;
-    font-weight: 200;
+#app-subtitle {
+    font-size: 0.7em;
+}
+
+@media only screen and (min-width: 768px) {
+    nav {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    nav {
+        max-width: 68rem;
+    }
 }
