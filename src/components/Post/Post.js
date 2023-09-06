@@ -65,6 +65,7 @@ export default function Post(props) {
                 </div>
             </div>
             {mediaRender(post)}
+            {renderComments()}
         </article>
     );
 }
