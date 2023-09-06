@@ -15,6 +15,16 @@ export default function Post(props) {
     const dispatch = useDispatch();
     const currentPost = useSelector(selectCurrentPost);
 
+    const mediaRender = (post) => {
+        if (!post.media) {
+            return;
+        } else if (post.is_video) {
+            return (<video className="post-image" controls playsInline width="250"><source src={post.secure_media.reddit_video.fallback_url} /></video>);
+        } else {
+            return (<img src={post.url} alt="" className="post-image" />);
+        }
+    }
+
     const handleClick = () => {
         if (post.permalink !== currentPost) {
             dispatch({
@@ -54,8 +64,8 @@ export default function Post(props) {
                     </button>
                 </div>
             </div>
-            {post.url && <img src={post.url} alt="" className="post-image" />}
-            {renderComments()}
+            {mediaRender(post)}
         </article>
     );
 }
+

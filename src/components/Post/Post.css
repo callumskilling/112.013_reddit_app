@@ -7,6 +7,10 @@
     cursor: pointer;
 }
 
+.post-container:first-of-type {
+    margin-top: 1.5rem;
+}
+
 .post-title {
     color: var(--clr-old-platinum);
     font-weight: var(--fw-n);
@@ -52,6 +56,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .post-container:first-of-type {
+        margin-top: 0;
+    }
+
     .post-info-wrapper {
         display: flex;
         gap: 1rem;

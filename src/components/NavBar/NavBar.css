@@ -37,5 +37,9 @@ nav {
 @media only screen and (min-width: 1440px) {
     nav {
         max-width: 68rem;
+        padding: 3rem 0;
+        margin-inline: auto;
+        left: 0;
+        right: 0;
     }
 }

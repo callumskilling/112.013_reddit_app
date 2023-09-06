@@ -11,9 +11,9 @@ export default function Comment({ comment }) {
         <div key={comment.id} className='comment-container'>
             <p className='comment-body'>{comment.body}</p>
             <div className='comment-info'>
-                <div className="comment-info-wrapper"><p className='author'>{comment.author}</p><User className="post-info-icon" /></div>
-                <div className="comment-info-wrapper"><p className='date_posted'>{timeFromNow(unixTimestamp)}</p><Calendar className="post-info-icon" /></div>
-                <div className="comment-info-wrapper"><p className='score'>{Number(comment.score).toLocaleString('en', { useGrouping: true })}</p><Up className="post-info-icon" /></div>
+                <div className="comment-info-wrapper"><p className="post-info-text author">{comment.author}</p><User className="post-info-icon" /></div>
+                <div className="comment-info-wrapper"><p className="post-info-text date-posted">{timeFromNow(unixTimestamp)}</p><Calendar className="post-info-icon" /></div>
+                <div className="comment-info-wrapper"><p className="post-info-text score">{Number(comment.score).toLocaleString('en', { useGrouping: true })}</p><Up className="post-info-icon" /></div>
 
 
 

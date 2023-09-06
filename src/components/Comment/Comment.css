@@ -1,9 +1,12 @@
+/* .comments-container is a class rendered by the CommentsList feature /src/feautures/commentsList */
+.comments-container {
+    display: grid;
+    gap: 0.5rem;
+}
+
 .comment-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     background-color: var(--clr-smoky-black);
 }
 
@@ -12,33 +15,31 @@
     transition: all 0.25s;
 }
 
-.comment-body {
-    width: 80%;
-    text-wrap: balance;
+.post-info-icon {
+    grid-area: icon;
 }
 
-.comment-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    font-size: 0.9rem;
+.post-info-text {
+    grid-area: text;
 }
 
 .comment-info-wrapper {
-    display: flex;
-    padding-block: 0.25rem;
+    display: grid;
+    grid-template-areas: "icon text";
+    grid-template-columns: min-content;
+
 }
 
-@media only screen and (max-width: 1100px) {
-    .comment-container {
-        display: block;
-    }
+@media only screen and (min-width: 768px) {
     .comment-info {
-        margin-top: 0.5rem;
-        flex-direction: row;
-        justify-content: space-around;
-        font-size: 0.7rem;
-        width: 100%;
-    }
-  }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        font-size: 0.9rem;
+    }    
+}
+
+@media only screen and (min-width: 1440px) {
+
+}
