@@ -6,4 +6,5 @@ footer {
     justify-content: space-evenly;
     align-items: center;
     margin-top: auto;
+    padding-block: 1rem;
 }

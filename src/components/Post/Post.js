@@ -16,12 +16,12 @@ export default function Post(props) {
     const currentPost = useSelector(selectCurrentPost);
 
     const mediaRender = (post) => {
-        if (!post.media) {
-            return;
+        if (post.post_hint === "image") {
+            return (<img src={post.url} alt="" className="post-image" />);
         } else if (post.is_video) {
             return (<video className="post-image" controls playsInline width="250"><source src={post.secure_media.reddit_video.fallback_url} /></video>);
         } else {
-            return (<img src={post.url} alt="" className="post-image" />);
+            return;
         }
     }
 

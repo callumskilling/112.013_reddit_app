@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { GoToTop } from "../../utils/GoToTop"
 import './Subreddits.css'
 
 export default function Subreddits() {
@@ -10,16 +11,15 @@ export default function Subreddits() {
         "r/baking",
         "r/lgbt",
         "r/gifs",
+        "r/pics",
         "r/askscience",
-        "r/brandnewsentence",
-        "r/renewableenergy",
-        "r/mademesmile",
-        "r/pokemon"
+        "r/mademesmile"
     ]
     
     const dispatch = useDispatch();
 
     const handleClick = (e) => {
+        GoToTop();
         const newSubreddit = e.target.getAttribute('value');
 
         dispatch({
