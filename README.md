@@ -1,69 +1,18 @@
-# <a name="readme-top"></a>
 
-<!-- PROJECT TITLE -->
-<div align="center">
-    <img src="https://cdn-icons-png.flaticon.com/512/3670/3670304.png" alt="Logo" width="80" height="80">
-  <h3 align="center">Reddit App</h3>
-  <p><em>Project In Progress</em></p>
-</div>
+# Minimal Reddit App
 
-## About The Project
-The goal is create a Reddit app that allows users to view and search posts and comments provided by the Reddit API.
+The goal was to create a Reddit app that allows users to view and search posts. It should also allow the user to load comments and view the popularity. In this project, I use React/Redux to store and display the results of fetching data using Reddit's JSON API.
 
-This is the final project under the Front End Development section of CodeCademy's Full Stack Developer Career Path.
 
-To learn more about CodeCademy, you can vist <a href="https://codecademy.com">CodeCademy's Homepage</a> or <a href="https://www.codecademy.com/profiles/HedwigIsAHoot">my CodeCademy Profile</a>
-
----
-
-## Gaining Experience With
+## Badges
 
 ![HTML5][HTML5]
 ![CSS3][CSS3]
 ![JavaScript][JavaScript]
 [![React][React.js]][React-url]
 [![Redux][Redux.js]][Redux-url]
-[![Jest][Jest.js]][Jest-url]
 [![GitHub][GitHub]][GitHub-url]
 
----
-
-## Project Requirements
-
-- [x] Build the application using React and Redux
-- [x] Version control your application with Git and host the repository on GitHub
-- [x] Use a project management tool (GitHub Projects, Trello, etc.) to plan your work
-- [x] Write a README (using Markdown) that documents your project including:
-    - [x] Wireframes
-    - [x] Technologies used
-    - [x] Features
-    - [x] Future work
-- [ ] Write unit tests for your components using Jest and Enzyme
-- [ ] Write end-to-end tests for your application
-- [x] Users can use the application on any device (desktop to mobile)
-- [x] Users can use the application on any modern browser
-- [x] Users can access your application at a URL
-- [x] Users see an initial view of the data when first visiting the app
-- [x] Users can search the data using terms
-- [x] Users can filter the data based on categories that are predefined
-- [ ] Users are shown a detailed view (modal or new page/route) when they select an item
-- [x] Users are delighted with a cohesive design system
-- [x] Users are delighted with animations and transitions
-- [x] Users are able to leave an error state
-- [ ] Get 90+ scores on [https://pagespeed.web.dev](https://pagespeed.web.dev/)
-    - [ ] We understand you cannot control how media assets like videos and images are sent to the client. It is okay to have a score below 90 for Performance if they are related to the media from Reddit.
-- [ ] OPTIONAL: [Get a custom domain name and use it for your application](https://www.codecademy.com/courses/make-a-website/lessons/setting-up-your-domain/)
-- [ ] OPTIONAL: Set up a CI/CD workflow to automatically deploy your application when the master branch in the repository changes
-- [ ] OPTIONAL: Make your application a progressive web app
-
----
-
-## Acknowledgments
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [CodeCademy](https://codecademy.com)
-
-<!-- MARKDOWN LINKS & IMAGES -->
 [HTML5]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [CSS3]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [Javascript]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white
@@ -71,7 +20,70 @@ To learn more about CodeCademy, you can vist <a href="https://codecademy.com">Co
 [React-url]: https://reactjs.org/
 [Redux.js]: https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white
 [Redux-url]: https://redux.js.org
-[Jest.js]: https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=16c213
-[Jest-url]: https://jestjs.io
 [GitHub]: https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white
 [GitHub-url]: https://github.com
+## Installation
+
+Install the project with npm. The project was created using Create React App, a now deprecated project. I suggest using [ViteJS](https://vitejs.dev/) for future React projects.
+
+```bash
+  npm install
+  npm run start
+```
+    
+## API Reference
+
+Host:
+```https://www.reddit.com```
+
+#### Get all posts from subreddit
+
+```http
+  GET /r/${subreddit}.json
+```
+
+#### Usage:
+```javascript
+export const loadAllPosts = createAsyncThunk(
+  'postsList/loadAllPosts',
+  async (currentSubreddit) => {
+    const response = await fetch(`https://www.reddit.com/${currentSubreddit}.json`);
+    const json = await response.json();
+    const postData = json.data.children.map((post) => post.data);
+    return postData;
+  }
+);
+```
+
+#### Get comments from post
+
+```http
+  GET /r/${subreddit}/comments/${post_id}/${post_title}.json
+  GET ${post_permalink}.json
+```
+
+The post_title is not exactly what is used here as the actual title is long and includes spaces, so the endpoint uses some shortened form with underscores handling space but I could not find that in the post data.
+
+What I do use insted is ${post_permalink}
+
+#### Usage
+
+```javascript
+export const loadAllComments = createAsyncThunk(
+  'commentsList/loadAllComments',
+  async (currentPost) => {
+    const response = await fetch(`https://www.reddit.com${currentPost}.json`);
+    const json = await response.json();
+    const commentsData = json[1].data.children.map((reply) => reply.data)
+    return commentsData;
+  }
+);
+```
+## Acknowledgments
+* [Img Shields](https://shields.io)
+* [GitHub Pages](https://pages.github.com)
+* [CodeCademy](https://codecademy.com)
+* [readme.so](https://readme.so)
+## Authors
+
+- [@callumskilling](https://www.github.com/callumskilling)
